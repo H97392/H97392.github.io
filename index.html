@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title id="Active"></title>
+  <title id="Active">Tasio Bidegain</title>
   <meta http-equiv="content-type" content="text/html; charset=utf-8" >
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
@@ -91,46 +91,298 @@ body {
   cursor: default;
 
 }
+/*html reset above*/
 
-a:hover {
-  cursor: pointer;
-}
-.image {
-  width: 8vw;
-}
-
-  .noselect {
-    -webkit-touch-callout: none;
-      -webkit-user-select: none;
-       -khtml-user-select: none;
-         -moz-user-select: none;
-          -ms-user-select: none;
-              user-select: none;
+/*page*/
+body {
+    background-color:#F2F3F4;
   }
 
+/*text area*/
+div {
+    width:420px;
+    height:flex;
+    margin: 5px;
+    padding: 40px;
+  }
+
+/*main text*/
+p {
+    font-family: sans-serif;
+    font-weight:normal;
+    font-size:14px;
+    line-height:160%;
+    padding:.8em;
+  }
+
+/*links*/
+a {
+    color:black;
+    text-underline-offset: .15em;
+    font-style: normal;
+    text-decoration:underline;
+  }
+
+/*gallery*/
+.gallery {
+  position:absolute;
+  left:32em;
+  padding-left: 2em;
+  padding-right: 2em;
+  float: left;
+  margin-right: -10000%;
+}
+/*captionarea*/
+.fig {
+    display:inline-block;
+    padding-left: 1em;
+    padding-bottom: 1em;
+  }
+
+/*standard image width*/
+.imgsize {
+height:28em;
+display:block;
+padding-bottom: .5em;
+}
+
+/*nocopy*/
+[data-text] {
+  color: inherit;
+}
+[data-text]::after {
+  content: attr(data-text);
+  position:relative;
+  margin-top:.8em;
+  margin-bottom:.8em;
+}
+
+/*mobile*/
+@media screen and (max-width: 450px){
+
+p {
+  font-size:5vw;
+}
+
+div {
+  width:80%;
+}
+.gallery {
+  position:relative;
+  left:0;
+  padding-left: 0;
+  padding-right: 0;
+  float: left;
+  margin-right:0;
+}
+
+.fig {
+  width:90%;
+  display:block;
+  position:relative;
+  left:.8em;
+  margin-top:.8em;
+  margin-left:.8em;
+  margin-bottom:.8em;
+}
+.imgsize{
+  height:auto;
+  width:90%;
+}
+}
 
 </style>
 <script>
-setInterval( checkFocus, 200 );
 
-function checkFocus() {
-  var info = document.getElementById("Active");
+/*BIO second level*/
+function moreOrLessDivA1() {
+      var v = document.getElementById("moreOrLessA1");
+      var b = document.getElementById("moreBtnA1")
+      if (v.style.display === "none") {
+         v.style.display = "inline";
+         b.setAttribute("data-text", "(Less...)");
+         /*close other tabs*/
+         document.getElementById("moreOrLessB").style.display = "none";
+         document.getElementById("moreOrLessC").style.display = "none";
+      } else {
+         v.style.display = "none";
+         b.setAttribute("data-text", "(More...)");
+      }
+   }
+/*PS first level*/
+function moreOrLessDivB() {
+      var v = document.getElementById("moreOrLessB");
+      if (v.style.display === "none") {
+         v.style.display = "inline";
+         /*close other tabs*/
+         document.getElementById("moreOrLessA1").style.display = "none";
+         document.getElementById("moreOrLessC").style.display = "none";
+      } else {
+         v.style.display = "none";
+      }
+   }
 
-  if ( document.hasFocus() ) {
-    info.innerHTML = "&#10003; 𝐇𝐄𝟕𝐌𝐄𝟐";
-  } else {
-    info.innerHTML = "&#9830; 𝐇𝐄𝟕𝐌𝐄𝟐";
+/*PS second level*/
+function moreOrLessDivB1() {
+      var v = document.getElementById("moreOrLessB1");
+      var b = document.getElementById("moreBtnB1")
+      if (v.style.display === "none") {
+         v.style.display = "inline";
+         b.setAttribute("data-text", "(Less...)");
+      } else {
+         v.style.display = "none";
+         b.setAttribute("data-text", "(More...)");
+      }
+   }
+/*CoMR first level*/
+function moreOrLessDivC() {
+    var v = document.getElementById("moreOrLessC");
+    if (v.style.display === "none") {
+       v.style.display = "inline";
+       /*close other tabs*/
+       document.getElementById("moreOrLessA1").style.display = "none";
+       document.getElementById("moreOrLessB").style.display = "none";
+    } else {
+       v.style.display = "none";
+    }
+ }
+
+/*CoMR second level*/
+function moreOrLessDivC1() {
+    var v = document.getElementById("moreOrLessC1");
+    var b = document.getElementById("moreBtnB1")
+    if (v.style.display === "none") {
+       v.style.display = "inline";
+       b.setAttribute("data-text", "(Less...)");
+    } else {
+       v.style.display = "none";
+       b.setAttribute("data-text", "(More...)");
+    }
+ }
+
+ /*Imprint first level*/
+function moreOrLessDivZ() {
+     var v = document.getElementById("moreOrLessZ");
+     if (v.style.display === "none") {
+        v.style.display = "inline";
+     } else {
+        v.style.display = "none";
+     }
   }
-}
-
 </script>
 
 </head>
 
 <body>
-  <div class="noselect">
-    HE7ME2<br>
-<img src="Screenshot 2020-11-20 at 13.24.01.png" alt="wojciech" class="image">
+  <div>
+  <p>
+  Tasio Bidegain is an interdisciplinary visual artist, currently living and working in Amsterdam.
+ <a onclick="moreOrLessDivA1();" class="moreless" id="moreBtnA1"data-text="(More...)"></a>
+  <span style="display:none;" id="moreOrLessA1">
+<br><br>
+He was born in 1996 in Menorca and grew up in Paris. Here he started to autonomously develop several independent artistic practices, such as painting, drawing, video or photography as a quotidian way to react and reflect on his surroundings. This year he graduated from the Gerrit&nbsp;Rietveld&nbsp;Academie.
+<br><br>
+From a curiosity and eagerness for complexity in visual language, he specialised in photography while continuously learning as many analogue and digital techniques of imagemaking as possible. These range from printmaking (lithography, etching, and so on) to video installation, ceramics, and textile printing.
+<br><br>
+He now works on merging these practices together into crafted images that carry complex narratives. Trying to create new visual ways of describing the intricate facets of reality is at the centre of his practice, in a personal attempt to synthesise and fixate in time, or capture, his experience of our chaotic world.
+<br><br>
+Bidegain's work process is both material and research-based, graphically communicating ideas while leaving space for subjective interpretations to arise. Mixing mediums such as photography and drawing, he aims to blur the lines between fiction and truth, virtual and material elements as well as building alternative realities in his images.
+<br><br>
+Over the last years, his practices has been converging into the creation of ever larger and drawn-out projects, manifesting his research as large-scale hand-carved photographs, editorial projects, and drawing installations. In so doing shaping and developing his very own pictorial techniques and visual language.
+  </span>
+  </p>
+
+  <p>
+  Send an <a href="mailto:tasio.bidegain@gmail.com">e-mail</a>, or have a look on <a href="http://instagram.com/tasio_bidegain">Instagram</a>.
+  </p>
+
+  <p id="PS">
+  <a onclick="moreOrLessDivB();">
+  Paris Syndrome</a>
+  <span style="display:none;" id="moreOrLessB">
+  is a photographic publication made during the corona crisis in 2020. 220 pages. Edition of 15.
+  <a onclick="moreOrLessDivB1();" class="moreless" id="moreBtnB1"data-text="(More...)"></a>
+<br><br>
+<span class="gallery">
+
+  <span class="fig"><img class="imgsize" src="images/paris_syndrome/paris1.jpg";>
+  Cover of <em>Paris&nbsp;Syndrome</em>, self-published, 2020.
+  </span>
+
+<span class="fig"><img class="imgsize" align="top" src="https://bit.ly/368CrhU";>
+First appearance at the Graduation Show of the Gerrit&nbsp;Rietveld&nbsp;Academie. Amsterdam, 2020.
+</span>
+
+<span class="fig"><img class="imgsize" align="top" src="images/paris_syndrome/paris2.jpg";>
+Poster made on the occasion of its release.
+</span>
+
+</span>
+    Shown at FOAM&nbsp;Museum, Gallerie&nbsp;Caroline&nbsp;O’Breen, Gallerie&nbsp;Ron&nbsp;Mandos, Het&nbsp;HEM, Arti&nbsp;et&nbsp;Amicitiae, Gerrit&nbsp;Rietveld&nbsp;Academie.
+<span style="display:none;" id="moreOrLessB1">
+<br><br>
+  <em>
+  Paris syndrome is a condition exhibited by some individuals when visiting or going on vacation to Paris, as a result of extreme shock at discovering that Paris is not as beautiful as they expected.
+  The disorder is caused by positive representations of the city in popular culture, which leads to immense disappointment as the reality of experiencing the city is very different from expectations: tourists are confronted with an overcrowded and littered city.
+  </em>
+<br><br>
+  Paris syndrome is the physical shock felt when virtual images appear as being more real than reality itself.
+<br><br>
+  Chained to the rhythm of the images we consume, we watch them go viral and disappear day after day, unable to look back and reflect, trapped in an eternal present. Screenshots of riots, adds for face-masks, media footage covering the pandemic, classical paintings, and landscapes of cities in ruins are amongst the images that I encountered and drew during this worldwide lockdown.
+<br><br>
+  By assembling these elements of our reality to construct a series of drawings, I aimed at making sense of this turmoil of images, enlightening its dystopian accents and manifesting the tension between real and fake, virtual and material images.
+<br><br>
+  The surgical sharpness of the drawings, mimicking the cold, systematic, and unsparing tone of the information cycle, contrasts with the enchanted reality of the pictures, weaving a constellation of modern narratives.
+<br><br>
+  In those “confined” photographs, taken in empty streets or inside the monotony of an apartment, the banality of our routine, trash, flowers, or buildings suddenly reveals an appealing and chimerical glow.
+  </span>
+  </span>
+  </p>
+
+
+
+  <p id="CoMR">
+    <a onclick="moreOrLessDivC();">
+    Corners of My Room</a>
+    <span style="display:none;" id="moreOrLessC">
+    is a hand-carved photographic tryptich, depicting the interior of a room.
+<a onclick="moreOrLessDivC1();" class="moreless" id="moreBtnB1"data-text="(More...)"></a>
+  <br><br>
+  <span class="gallery">
+    <span class="fig"><img class="imgsize" src="images/corners_of_my_room/corners1.jpg";>
+    <em>Corners of My Room</em>, etching and chemicals on photographic print, 183&nbsp;×&nbsp;283&nbsp;cm.
+    </span>
+  <span class="fig"><img class="imgsize" align="top" src="images/corners_of_my_room/corners2.jpg";>
+   Context shot of the work at Museum&nbsp;Belvedere. Heerenveen, 2020.
+  </span>
+  </span>
+      Shown at Museum&nbsp;Belvedere and Punt&nbsp;WG.
+  <span style="display:none;" id="moreOrLessC1">
+<br><br>
+    More specifically, it envisions the room where the artist constructed this image, between December 2019 and January 2020.
+<br><br>
+    During this time, the room was not only inhabited by objects, him or his loved ones, but by an abundance of images.
+<br><br>
+    The three main panels of the piece stand as the three walls of a room one can observe while being in it. Altogether, they form a single image in which reading radically differs from the classical dichotomy of triptychs; here, hell and heaven coexist in a familiar yet dream-like vision of our reality.
+<br><br>
+    The first layer is the photographic print, for which the artist gathered and assembled the objects existing in the room: food, screens, souvenirs, money, and flowers from modern still lives, befitting the ephemerality and fetishism of overconsumption.
+<br><br>
+    The digital pictures are printed on glossy paper and mounted on aluminum, regaining the physical rigidity of a wall showing the lustre and reflective qualities of a screen.
+<br><br>
+    Based on the numbers phi (φ) and pi (π) that are constants in both nature and culture, complex geometrical structures weave through the image. These structures serve as the scaffolding for the hand-carved graphic interventions finally made on the prints.
+<br><br>
+    The photographs are carved with a mix of sharp tools and chemicals, drawing out imagery as the photographic paper is eroded, unveiling the subtext of the photographies, their unconscious, and hidden meanings. All the images drawn existed in the room, they were all carefully placed on the image, following the structure, for their symbolic and narrative capacities, to create new visuals associations.
+    </span>
+    </span>
+    </p>
+
+  <p>
+  <span style="display:none;" id="moreOrLessZ">
+  Webdesign by <a href="http://helmer.biz">Helmer Stuyt</a>
+  </span>
+    <a style="text-decoration:none;"onclick="moreOrLessDivZ();">
+  © 2020</a>
+  </p>
   </div>
 </body>
 
